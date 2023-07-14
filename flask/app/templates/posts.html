@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Posts on Flask</title>
+</head>
+<body>
+    <h1>Posts on Flask</h1>
+    <ul>
+        {% for post in posts %}
+        <li>{{ post.title }} - {{ post.text }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
