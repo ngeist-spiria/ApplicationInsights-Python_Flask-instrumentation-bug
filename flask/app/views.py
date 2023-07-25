@@ -33,8 +33,9 @@ def view_posts():
 @index_bp.route('/posts_raw')
 def view_posts_raw():
     header_val = request.headers.get('traceparent')
-    print(header_val)
+    print(f"Received: {header_val}")
     response = requests.get('http://django-api:8000/api/posts/')
+    print(f"Requested: {response.request.headers['traceparent']}")
     if response.status_code == 200:
         posts = response.json()
         return posts

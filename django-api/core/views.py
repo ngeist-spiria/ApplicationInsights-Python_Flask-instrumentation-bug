@@ -18,6 +18,6 @@ class PostViewSet(
 
     def list(self, request, *args, **kwargs):
         traceparent_header = request.headers.get('traceparent')
-        print(traceparent_header)
+        print(f"Received: {traceparent_header}")
         return super().list(request, *args, **kwargs)
     
